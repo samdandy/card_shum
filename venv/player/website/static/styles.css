@@ -1,0 +1,13 @@
+.centered-dropdown_year {
+    text-align: center;
+    width: 60px; /* Set the desired width for the dropdown */
+}
+
+.centered-dropdown_team {
+    width: 190px; /* Set the desired width for the dropdown */
+}
+
+.centered-dropdown_grader {
+    width: 200px; 
+    display: flex;
+}

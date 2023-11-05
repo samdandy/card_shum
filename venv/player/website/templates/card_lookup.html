@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6"> {% if bad_search is True %}
+          <br>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              No results found
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+          <br>
+          <h1>Card Lookup</h1>
+          <br>
+          <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}           
+              <button type="submit" name="search">Search</button></div>
+        <div class="col-sm-3"> 
+          {% if results %}
+      
+          <p> Showing results for: {{ results.search_crit }}<p>
+    
+          <div class="card" style="width: 14rem">
+          <img src="{{ results.img }}" class="card-img-top img-fluid">
+          <ul class="list-group list-group-flush">
+            {{ price_form }}
+            {{ img_form }}
+          </ul>
+          <button type="submit" name="add">Add to Collection</button>
+   
+          {% endif %}
+              </form></div>
+    </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    
+       
+           
+          
+      </div>
+  </div>
+{% endblock %}
