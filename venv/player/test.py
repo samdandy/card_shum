@@ -4,21 +4,21 @@ from django.core.management import settings
 from pathlib import Path    
 from player.website.funcs import lookup_card
 
-s3 = boto3.client('s3')
-env = environ.Env(
-    DEBUG=(bool,False)
-)
+# s3 = boto3.client('s3')
+# env = environ.Env(
+#     DEBUG=(bool,False)
+# )
 
 
 print(lookup_card('Jose Altuve 2011 Topps Houston Astros -auto -autograph PSA 10'))
 
-BASE_DIR = Path(__file__).resolve().parent
+# BASE_DIR = Path(__file__).resolve().parent
 
-environ.Env.read_env(BASE_DIR /'.env')
-AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+# environ.Env.read_env(BASE_DIR /'.env')
+# AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 
-print(AWS_STORAGE_BUCKET_NAME)
-# # Specify the S3 bucket name
+# print(AWS_STORAGE_BUCKET_NAME)
+# # # Specify the S3 bucket name
 # bucket_name = 'cardappshum'
 
 # # List objects in the S3 bucket
